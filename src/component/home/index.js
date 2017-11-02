@@ -14,10 +14,12 @@ export class Home extends Component {
               <Icon name="ios-menu" />
             </Button>
           </Left>
-          <Body>
-          <Title>Trang chủ</Title>
+          <Body style={{  flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
+          <Title style={{  flex: 4}} >Trang chủ</Title>
+          <Icon active name="settings" style={{ flex: 1, color: "#f5e615" }} />
           </Body>
-          <Right />
+
+          <Right/>
         </Header>
         <View style={{ padding: 10}}>
           <Item>

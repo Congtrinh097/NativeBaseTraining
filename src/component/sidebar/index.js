@@ -28,7 +28,7 @@ const datas = [
 	{
 		name: "Trang chủ",
 		route: "Home",
-		icon: "phone-portrait",
+		icon: "home",
 		bg: "#C5F442",
 	},
 	{
@@ -47,27 +47,27 @@ const datas = [
 	{
 		name: "Các khoản nợ",
 		route: "Debt",
-		icon: "phone-portrait",
+		icon: "beer",
 		bg: "#DA4437",
 		types: "4",
 	},
 	{
 		name: "Cấu hình",
-		route: "Cofiguration",
-		icon: "notifications",
+		route: "Configuration",
+		icon: "settings",
 		bg: "#4DCAE0",
 	},
 	{
 		name: "Thống kê",
 		route: "Statistic",
-		icon: "radio-button-off",
+		icon: "paper",
 		bg: "#1EBC7C",
 		types: "9",
 	},
 	{
 		name: "Thông tin",
 		route: "About",
-		icon: "paper",
+		icon: "information-circle",
 		bg: "#48525D",
 	},
 ];
