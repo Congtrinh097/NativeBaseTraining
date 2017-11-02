@@ -25,7 +25,7 @@ const Drawer = DrawerNavigator(
     About: {screen: About}
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
     contentOptions: {
       activeTintColor: "#e91e63"
     },

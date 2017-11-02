@@ -6,19 +6,11 @@ export class Login extends Component {
     return (
       <Container>
       <Header>
-        <Left>
-          <Button
-            transparent
-            onPress={() => this.props.navigation.navigate("DrawerOpen")}
-          >
-            <Icon name="ios-menu" />
-          </Button>
-        </Left>
+        <Left></Left>
         <Body>
-        <Title>Đăng nhập</Title>
+          <Title>Đăng nhập</Title>
         </Body>
-        <Right />
-
+        <Right/>
       </Header>
       <View style={{ padding: 10}}>
             <Item>
@@ -28,11 +20,9 @@ export class Login extends Component {
               <Input  placeholder="mật khẩu" />
             </Item>
 
-            <Button danger  style={{ marginTop: 10, alignContent: 'center'}}
-                    onPress={() =>alert('Clicked')}
-            >
-              <Text >Đăng nhập! </Text>
-            </Button>
+          <Button block style={{ margin: 15, marginTop: 50 }}  onPress={() => this.props.navigation.navigate("Home")}>
+            <Text>Đăng nhập</Text>
+          </Button>
       </View>
       </Container>
     );
