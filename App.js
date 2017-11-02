@@ -8,6 +8,8 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
+  View,
+  Text
 } from 'react-native';
 
 import { Container, Header, Content, Form, Item, Input, Footer, Button } from 'native-base';
@@ -29,20 +31,8 @@ export default class App extends Component<{}> {
         <Content>
           <Login/>
         </Content>
-        <Footer />
       </Container>
-      // <View style={styles.container}>
-      //
-      //   <Text style={styles.welcome}>
-      //     Welcome to React Native!
-      //   </Text>
-      //   <Text style={styles.instructions}>
-      //     To get started, edit App.js
-      //   </Text>
-      //   <Text style={styles.instructions}>
-      //     {instructions}
-      //   </Text>
-      // </View>
+
     );
   }
 }
@@ -56,6 +46,8 @@ const styles = StyleSheet.create({
   },
   welcome: {
     fontSize: 20,
+    flex: 1,
+    backgroundColor: '#56c5ff',
     textAlign: 'center',
     margin: 10,
   },
