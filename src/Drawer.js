@@ -3,7 +3,7 @@
 import React from "react";
 import { DrawerNavigator } from "react-navigation";
 
-import {Home} from "./component/home";
+import {Tools} from "./component/tools/index";
 import {Login} from "./component/login/login";
 import SideBar from "./component/sidebar/index";
 import {Expense} from "./component/expense/index";
@@ -12,17 +12,19 @@ import {Debt} from "./component/debt/index";
 import {Configuration} from "./component/configuration/index";
 import {Statistic} from "./component/statistic/index";
 import {About} from "./component/about/index";
+import {ReactCalculator} from "./component/tools/calculator/ReactCalculator";
 
 const Drawer = DrawerNavigator(
   {
-    Home: { screen: Home },
+    Tools: { screen: Tools },
     Login: { screen: Login },
     Expense: { screen: Expense },
     Income: { screen: Income },
     Debt:{ screen: Debt},
     Configuration: { screen: Configuration},
     Statistic: {screen: Statistic},
-    About: {screen: About}
+    About: {screen: About},
+    Calculator: {screen: ReactCalculator}
   },
   {
     initialRouteName: "Login",

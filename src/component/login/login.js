@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Container, Header, Content, Form, Item, Input, Button, Text, Left,Right, Icon,Body, Title } from 'native-base';
 import { StyleSheet ,View, Image} from 'react-native'
 
@@ -23,7 +24,7 @@ export class Login extends Component {
               <Input placeholder="Mật khẩu"/>
             </Item>
 
-            <Button block style={styles.button} onPress={() => this.props.navigation.navigate("Home")}>
+            <Button block style={styles.button} onPress={() => this.props.navigation.navigate("Tools")}>
               <Left>
                 <Icon active name="person" style={{color: "#fafcfe", marginLeft: 10}}/>
               </Left>
@@ -31,7 +32,7 @@ export class Login extends Component {
               <Right/>
             </Button>
 
-            <Button info block style={styles.button} onPress={() => this.props.navigation.navigate("Home")}>
+            <Button info block style={styles.button} onPress={() => this.props.navigation.navigate("Tools")}>
               <Left>
                 <Icon name="logo-facebook" style={{color: "#46639E", marginLeft: 10}}/>
               </Left>

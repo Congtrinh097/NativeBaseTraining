@@ -25,12 +25,7 @@ const drawerCover = require("../../../img/banner.jpg");
 const drawerImage = require("../../../img/money_logo.png");
 
 const datas = [
-	{
-		name: "Trang chủ",
-		route: "Home",
-		icon: "home",
-		bg: "#C5F442",
-	},
+
 	{
 		name: "Chi tiêu",
 		route: "Expense",
@@ -51,6 +46,12 @@ const datas = [
 		bg: "#DA4437",
 		types: "4",
 	},
+  {
+    name: "Tiện ích",
+    route: "Tools",
+    icon: "logo-github",
+    bg: "#C5F442",
+  },
 	{
 		name: "Cấu hình",
 		route: "Configuration",
