@@ -13,6 +13,7 @@ import {Configuration} from "./component/configuration/index";
 import {Statistic} from "./component/statistic/index";
 import {About} from "./component/about/index";
 import {ReactCalculator} from "./component/tools/calculator/ReactCalculator";
+import {StopWatch} from "./component/tools/stopwatch/stopwatch";
 
 const Drawer = DrawerNavigator(
   {
@@ -24,7 +25,8 @@ const Drawer = DrawerNavigator(
     Configuration: { screen: Configuration},
     Statistic: {screen: Statistic},
     About: {screen: About},
-    Calculator: {screen: ReactCalculator}
+    Calculator: {screen: ReactCalculator},
+    StopWatch: {screen: StopWatch}
   },
   {
     initialRouteName: "Login",

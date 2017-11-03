@@ -28,7 +28,7 @@ export class Tools extends Component {
           <Separator bordered noTopBorder />
           <ListItem icon last onPress={() => this.props.navigation.navigate('Calculator')}>
             <Left>
-              <Button style={{ backgroundColor: "#FF9501" }}>
+              <Button style={{ backgroundColor: "#FF9501" }} onPress={() => this.props.navigation.navigate('Calculator')}>
                 <Icon active name="calculator" />
               </Button>
             </Left>
@@ -53,9 +53,9 @@ export class Tools extends Component {
             </Right>
           </ListItem>
           <Separator bordered />
-          <ListItem icon last >
+          <ListItem icon last onPress={() => this.props.navigation.navigate('StopWatch')}>
             <Left>
-              <Button style={{ backgroundColor: "#5855D6" }}>
+              <Button style={{ backgroundColor: "#5855D6" }} onPress={() => this.props.navigation.navigate('StopWatch')}>
                 <Icon active name="speedometer" />
               </Button>
             </Left>
