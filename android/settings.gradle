@@ -1,3 +1,3 @@
-rootProject.name = 'projectNativeBase'
+rootProject.name = 'MySelf'
 
 include ':app'

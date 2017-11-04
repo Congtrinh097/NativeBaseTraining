@@ -25,17 +25,17 @@ export class Tools extends Component {
           <Right/>
         </Header>
         <Content>
-          <Separator bordered noTopBorder />
-          <ListItem icon last onPress={() => this.props.navigation.navigate('Calculator')}>
-            <Left>
-              <Button style={{ backgroundColor: "#FF9501" }} onPress={() => this.props.navigation.navigate('Calculator')}>
-                <Icon active name="calculator" />
-              </Button>
-            </Left>
-            <Body>
-            <Text>Máy Tính</Text>
-            </Body>
-            <Right>
+              <Separator bordered noTopBorder />
+              <ListItem icon last onPress={() => this.props.navigation.navigate('Calculator')}>
+                <Left>
+                  <Button style={{ backgroundColor: "#FF9501" }} onPress={() => this.props.navigation.navigate('Calculator')}>
+                    <Icon active name="calculator" />
+                  </Button>
+                </Left>
+                <Body>
+                <Text>Máy Tính</Text>
+                </Body>
+                <Right>
 
             </Right>
           </ListItem>
@@ -61,6 +61,20 @@ export class Tools extends Component {
             </Left>
             <Body>
             <Text>Đồng hồ bấm giờ</Text>
+            </Body>
+            <Right>
+            </Right>
+          </ListItem>
+
+          <Separator bordered />
+          <ListItem icon last onPress={() => this.props.navigation.navigate('Calendar')}>
+            <Left>
+              <Button style={{ backgroundColor: 'blue' }} onPress={() => this.props.navigation.navigate('Calendar')}>
+                <Icon active name="calendar" />
+              </Button>
+            </Left>
+            <Body>
+            <Text>Âm lịch</Text>
             </Body>
             <Right>
             </Right>

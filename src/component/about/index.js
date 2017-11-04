@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import  {StyleSheet} from 'react-native'
 import { Container, Header, Content, Form, Item, Input, Button, Text, Left,Right, Icon,Body, Title } from 'native-base';
 import {View} from  'react-native'
+import styles from './style'
+
 export class About extends Component {
   render() {
     return (
@@ -19,10 +22,13 @@ export class About extends Component {
           </Body>
           <Right />
         </Header>
-        <View style={{ padding: 10}}>
-          <Item>
-            <Text> Đây là nội dung</Text>
-          </Item>
+        <View style={styles.container}>
+          <Text style={styles.text}> Phần mềm quản lí cá nhân</Text>
+          <Text style={styles.text}> Sử dụng để quản lí các công việc hằng ngày của bạn, quản lí tài chính cá nhân, và một số tiện ích</Text>
+          <Text style={styles.text}> Phiên bản: v1.0.0</Text>
+          <Text style={styles.text}> Phát triển bởi: congtrinh097</Text>
+
+
         </View>
       </Container>
     );
