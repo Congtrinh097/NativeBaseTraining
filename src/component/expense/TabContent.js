@@ -9,12 +9,10 @@ import  styles from './style';
 export default class TabContent extends Component {
 
   componentWillMount(){
-    this.setState({ spinnerShow: true})
-
+    this.setState({ spinnerShow: false})
   }
 
   componentDidMount(){
-    this.setState({ spinnerShow: false});
   }
   render()
   {
@@ -23,7 +21,6 @@ export default class TabContent extends Component {
         { this.state.spinnerShow == true?
           <Spinner />:null
         }
-
         <View>
           <Card style={{ flex: 0 }}>
             <CardItem>

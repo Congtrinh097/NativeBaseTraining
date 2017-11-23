@@ -28,13 +28,10 @@ export class Expense extends Component {
           <Tab heading="Tháng trước">
             <TabContent/>
           </Tab>
-          <Tab  acive heading="Tháng này">
+          <Tab heading="Tháng này">
             <TabContent/>
           </Tab>
           <Tab heading="Tháng Sau">
-            <TabContent/>
-          </Tab>
-          <Tab heading="Năm này">
             <TabContent/>
           </Tab>
         </Tabs>

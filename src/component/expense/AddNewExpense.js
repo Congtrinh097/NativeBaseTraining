@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import { Container, Header, Content, Form, Item, Input, Button, Text, Left,Right, Icon,Body, Title,
   ListItem,InputGroup,Picker
 } from 'native-base';
-
+import MoneyInput from './MoneyInput'
 
 export default class  AddNewExpense extends Component{
 
   render(){
     return(
+
       <Container>
+
         <Header>
           <Left>
             <Button
@@ -42,12 +44,14 @@ export default class  AddNewExpense extends Component{
               <Input placeholder="Ngày" value={"Hôm nay"} />
             </InputGroup>
           </ListItem>
-
+          <MoneyInput ref='MoneyInput'/>
           <Button
             info
             style={{ alignSelf: 'center', marginBottom: 20, marginTop: 20 }}
-            onPress={() => { alert('Lưu thành công');
-              this.props.navigation.navigate("Expense");
+            onPress={() => {
+              //alert('Lưu thành công');
+              //this.props.navigation.navigate("Expense");
+              this.refs.MoneyInput.show()
             }}
           >
             <Icon name="archive" />
