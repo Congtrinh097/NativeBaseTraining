@@ -1,10 +1,50 @@
 import React, { Component } from 'react';
 
 import { Container, Header, Content, Form, Item, Input, Button, Text, Left,Right, Icon,Body, Title } from 'native-base';
-import { StyleSheet ,View, Image} from 'react-native'
+import { StyleSheet ,View, Image} from 'react-native';
+import FirebaseServiceInstance from '../../Services/FirebaseService'
 
 const drawerCover = require("../../../img/login_background.jpg");
+
 export class Login extends Component {
+
+  componentWillMount(){
+    this.setState({Email: '', Password: ''});
+  }
+
+  async onLogin() {
+
+    let result = await FirebaseServiceInstance.SignInWithEmailAndPassword(this.state.Email, this.state.Password);
+
+    alert(result)
+    if(result.code) {
+      switch (result.code) {
+        case 'auth/user-not-found':
+          alert("User Not Found");
+          break;
+        case 'auth/wrong-password':
+          alert("Wrong Password")
+          break;
+      }
+    } else {
+      alert("Success Login!");
+      let currentUser = FirebaseServiceInstance.GetCurrentUser();
+      this.props.navigation.navigate("Income")
+    }
+  }
+
+  emailChanged(text) {
+    this.setState({
+      Email: text
+    })
+  }
+
+  passwordChanged(text) {
+    this.setState({
+      Password: text
+    })
+  }
+
   render() {
     return (
       <Container>
@@ -18,13 +58,20 @@ export class Login extends Component {
         <Image source={drawerCover} style={styles.background}>
           <View style={{padding: 10}}>
             <Item style={styles.button}>
-              <Input placeholder="Tên đăng nhập"/>
+              <Input placeholder="Email"
+                     value={this.state.UserName}
+                     onChangeText={(text) => {this.emailChanged(text)}}
+              />
             </Item>
             <Item last style={styles.button}>
-              <Input placeholder="Mật khẩu"/>
+              <Input placeholder="Mật khẩu"
+                     value={this.state.Password}
+                     secureTextEntry
+                     onChangeText={(text) => {this.passwordChanged(text)}}
+              />
             </Item>
 
-            <Button block style={styles.button} onPress={() => this.props.navigation.navigate("Tools")}>
+            <Button block style={styles.button} onPress={()=>{this.onLogin()}}>
               <Left>
                 <Icon active name="person" style={{color: "#fafcfe", marginLeft: 10}}/>
               </Left>
@@ -52,6 +99,8 @@ export class Login extends Component {
       </Container>
     );
   }
+
+
 }
 
 var styles = StyleSheet.create({
