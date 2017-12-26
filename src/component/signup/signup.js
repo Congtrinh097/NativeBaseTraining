@@ -17,6 +17,7 @@ import {
 import {View, Image, StyleSheet, TouchableOpacity, Alert, Dimensions} from 'react-native';
 import FirebaseServiceInstance from "../../Services/FirebaseService";
 
+const drawerImage = require("../../../img/money_logo.png");
 
 export class SignUp extends React.Component {
 
@@ -38,7 +39,7 @@ export class SignUp extends React.Component {
           </Header>
 
           <View style={styles.logoContainer}>
-            {/*<Image source={AppImage.IVLogo} style={styles.logo}/>*/}
+            <Image style={styles.logo} source={drawerImage} />
           </View>
           <View style={styles.formContainer}>
 

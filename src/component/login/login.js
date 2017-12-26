@@ -51,54 +51,59 @@ export class Login extends Component {
       <Header style={{justifyContent: 'center', alignItems: 'center'}}>
           <Title>Đăng nhập</Title>
       </Header>
-        <Image source={drawerCover} style={styles.background}>
+        <View style={styles.background}>
           <View style={{padding: 10}}>
             <Item style={styles.button}>
-              <Input placeholder="Email"
+              <Input placeholder="Email" style={{color: '#fff'}}
+                     placeholderTextColor={'#cedbff'}
                      value={this.state.UserName}
                      onChangeText={(text) => {this.emailChanged(text)}}
               />
             </Item>
             <Item last style={styles.button}>
-              <Input placeholder="Mật khẩu"
+              <Input placeholder="Mật khẩu" style={{color: '#fff'}}
+                     placeholderTextColor={'#cedbff'}
                      value={this.state.Password}
                      secureTextEntry
                      onChangeText={(text) => {this.passwordChanged(text)}}
               />
             </Item>
 
-            <Button block style={styles.button} onPress={()=>{this.onLogin()}}>
+            <Button rounded block style={styles.button} onPress={()=>{this.onLogin()}}>
               <Left>
-                <Icon active name="person" style={{color: "#fafcfe", marginLeft: 10}}/>
+                <Icon active name="person" style={{color: "#fafcfe", marginLeft: 20}}/>
               </Left>
               <Text>Đăng nhập</Text>
               <Right/>
             </Button>
 
-            <Button info block style={styles.button} onPress={() => this.props.navigation.navigate("Tools")}>
+            <Button info rounded block style={styles.button} onPress={() => this.props.navigation.navigate("Tools")}>
               <Left>
-                <Icon name="logo-facebook" style={{color: "#46639E", marginLeft: 10}}/>
+                <Icon name="logo-facebook" style={{color: "#46639E", marginLeft: 20}}/>
               </Left>
               <Text>Đăng nhập bằng facebook</Text>
               <Right/>
             </Button>
 
-            <Button danger block style={styles.button} onPress={() => this.props.navigation.navigate("Login")}>
+            <Button danger rounded block style={styles.button} onPress={() => this.props.navigation.navigate("Login")}>
               <Left>
-                <Icon name="logo-google" style={{color: "#f5e615", marginLeft: 10}}/>
+                <Icon name="logo-google" style={{color: "#f5e615", marginLeft: 20}}/>
               </Left>
               <Text>Đăng nhập bằng google</Text>
               <Right/>
             </Button>
             <View style={{flexDirection: 'row', height: 50, justifyContent:'center', alignItems:'center',bottom: 0, marginTop: 30}}>
-              <TouchableOpacity onPress={()=>{
-                this.props.navigation.navigate("SignUp")
-              }}>
-                <Text style={{color: 'white', fontSize: 15}}>Đăng kí</Text>
-              </TouchableOpacity>
+              <View style={{flexDirection: 'row'}}>
+                <Text style={{color: 'white', fontSize: 12}}>Bạn chưa có tài khoản? </Text>
+                <TouchableOpacity onPress={() => {
+                  this.props.navigation.navigate("SignUp")
+                }}>
+                  <Text bold style={{color: 'white', fontSize: 12}}>Đăng kí!</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </Image>
+        </View>
       </Container>
     );
   }
@@ -112,6 +117,7 @@ var styles = StyleSheet.create({
     // remove width and height to override fixed static size
     width: null,
     height: null,
+    backgroundColor: "#252c40"
   },
   button:{
     margin: 15, marginTop: 20
