@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { Container, Header, Content, Form, Item, Input, Button, Text, Left,Right, Icon,Body, Title } from 'native-base';
-import { StyleSheet ,View, Image} from 'react-native';
+import { Container, Header, Content, Form, Item, Input, Button, Text, Left, Right, Icon, Title } from 'native-base';
+import { StyleSheet ,View, Image, TouchableOpacity} from 'react-native';
 import FirebaseServiceInstance from '../../Services/FirebaseService'
 
 const drawerCover = require("../../../img/login_background.jpg");
@@ -29,7 +29,7 @@ export class Login extends Component {
     } else {
       alert("Success Login!");
       let currentUser = FirebaseServiceInstance.GetCurrentUser();
-      this.props.navigation.navigate("Income")
+      this.props.navigation.navigate("Expense")
     }
   }
 
@@ -48,12 +48,8 @@ export class Login extends Component {
   render() {
     return (
       <Container>
-      <Header>
-        <Left></Left>
-        <Body>
+      <Header style={{justifyContent: 'center', alignItems: 'center'}}>
           <Title>Đăng nhập</Title>
-        </Body>
-        <Right/>
       </Header>
         <Image source={drawerCover} style={styles.background}>
           <View style={{padding: 10}}>
@@ -94,6 +90,13 @@ export class Login extends Component {
               <Text>Đăng nhập bằng google</Text>
               <Right/>
             </Button>
+            <View style={{flexDirection: 'row', height: 50, justifyContent:'center', alignItems:'center',bottom: 0, marginTop: 30}}>
+              <TouchableOpacity onPress={()=>{
+                this.props.navigation.navigate("SignUp")
+              }}>
+                <Text style={{color: 'white', fontSize: 15}}>Đăng kí</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </Image>
       </Container>

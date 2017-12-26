@@ -16,11 +16,13 @@ import {ReactCalculator} from "./component/tools/calculator/ReactCalculator";
 import {StopWatch} from "./component/tools/stopwatch/stopwatch";
 import {Calendar} from "./component/tools/calendar/index";
 import AddNewExpense from "./component/expense/AddNewExpense";
+import {SignUp} from "./component/signup/signup";
 
 const Drawer = DrawerNavigator(
   {
     Tools: { screen: Tools },
     Login: { screen: Login },
+    SignUp: { screen: SignUp },
     Expense: { screen: Expense },
     Income: { screen: Income },
     Debt:{ screen: Debt},
