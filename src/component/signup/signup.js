@@ -114,6 +114,7 @@ export class SignUp extends React.Component {
               return;
             } else {
               let currentUser = FirebaseServiceInstance.GetCurrentUser();
+              LocalStorageInstance.saveCurrentUser(currentUser);
               this.props.navigation.navigate('Expense')
             }
           }

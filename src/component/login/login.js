@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import { Container, Header, Content, Form, Item, Input, Button, Text, Left, Right, Icon, Title } from 'native-base';
 import { StyleSheet ,View, Image, TouchableOpacity} from 'react-native';
-import FirebaseServiceInstance from '../../Services/FirebaseService'
+import FirebaseServiceInstance from '../../Services/FirebaseService';
+import  LocalStorageInstance from  '../../Services/LocalStorageServices';
 
 const drawerCover = require("../../../img/login_background.jpg");
 
@@ -29,6 +30,7 @@ export class Login extends Component {
     } else {
       alert("Success Login!");
       let currentUser = FirebaseServiceInstance.GetCurrentUser();
+      LocalStorageInstance.saveCurrentUser(currentUser);
       this.props.navigation.navigate("Expense")
     }
   }
@@ -45,6 +47,12 @@ export class Login extends Component {
     })
   }
 
+  componentDidMount(){
+    let currentUser = LocalStorageInstance.getCurrentUser();
+    if (currentUser){
+      this.props.navigation.navigate("Expense");
+    }
+  }
   render() {
     return (
       <Container>
